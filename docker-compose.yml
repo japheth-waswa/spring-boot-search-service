@@ -1,0 +1,23 @@
+version: "3.8"
+
+services:
+  elasticSearch:
+    image: elasticsearch:8.11.1
+    expose:
+      - 9200
+      - 9300
+    ports:
+      - 10200:9200
+      - 10300:9300
+#    environment: ['ES_JAVA_OPTS=-Xms2g -Xmx2g','bootstrap.memory_lock=true','discovery.type=single-node','xpack.security.enabled=false', 'xpack.security.enrollment.enabled=false']
+
+    environment:
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+      - bootstrap.memory_lock=true
+      - discovery.type=single-node
+      - xpack.security.enabled=false
+      - xpack.security.enrollment.enabled=false
+    volumes:
+      - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - /Users/japhethelijah/dev/docker-volumes/revenue/elasticsearch:/usr/share/elasticsearch/data
+    restart: unless-stopped
