@@ -13,6 +13,7 @@ import java.util.Map;
 public class HelperUtil {
     public static final String FILES_INDEX = "files";
     public static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";
+    public static final String FILE_SUBSCRIBER_TOPIC = "OCR-SEARCH-STORE";
 
     public static Query buildQuery(Map<String, Object> queryMap) {
 //        //working start

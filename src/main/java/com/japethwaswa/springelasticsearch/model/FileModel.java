@@ -34,4 +34,8 @@ public class FileModel {
 
     @JsonFormat(pattern = HelperUtil.DATE_FORMAT)
     private Date createdAt;
+
+    private String userId;
+    private String channel;
+    private String fileName;
 }
