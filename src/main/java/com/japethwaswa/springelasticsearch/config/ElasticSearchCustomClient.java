@@ -20,7 +20,7 @@ public class ElasticSearchCustomClient {
         // Create the low-level client
         RestClient httpClient = RestClient.builder(
                 new HttpHost(ElasticSearchApplication.dotenv != null ? ElasticSearchApplication.dotenv.get("ELASTIC_SEARCH_HOST") : "localhost",
-                        ElasticSearchApplication.dotenv != null ? Integer.parseInt(ElasticSearchApplication.dotenv.get("ELASTIC_SEARCH_PORT")) : 9200)
+                        ElasticSearchApplication.dotenv != null ? Integer.parseInt(ElasticSearchApplication.dotenv.get("ELASTIC_SEARCH_PORT")) : 10200)
         ).build();
 
         // Create the Java API Client with the same low level client

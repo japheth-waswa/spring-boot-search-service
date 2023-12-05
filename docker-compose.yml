@@ -21,3 +21,16 @@ services:
       - ./elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
       - /Users/japhethelijah/dev/docker-volumes/revenue/elasticsearch:/usr/share/elasticsearch/data
     restart: unless-stopped
+
+  searchservice:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: japhethwaswa/searchservice:1
+    expose:
+      - 1998
+    ports:
+      - 2098:1998
+    volumes:
+      - ./.env.dev:/.env
+    restart: always
